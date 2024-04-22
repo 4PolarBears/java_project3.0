@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editGroceryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item name" />
+
+    <EditText
+        android:id="@+id/editGroceryNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item note" />
+
+    <CheckBox
+        android:id="@+id/checkImportant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Super important" />
+
+    <Button
+        android:id="@+id/buttonAddGrocery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Item" />
+
+</LinearLayout>

@@ -1,0 +1,44 @@
+{
+  "query": [
+    {
+      "code": "Alue",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "KU398"
+        ]
+      }
+    },
+    {
+      "code": "Tiedot",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "vm01",
+          "vm11",
+          "luonvalisays",
+          "vm43_tulo",
+          "vm43_lahto",
+          "vm43_netto",
+          "vm44",
+          "vm41",
+          "vm41_nordic",
+          "vm41_eu",
+          "vm42",
+          "vm42_nordic",
+          "vm42_eu",
+          "vm4142",
+          "koknetmuutto",
+          "vm2126",
+          "vm3136",
+          "valisays",
+          "vakorjaus",
+          "kokmuutos"
+        ]
+      }
+    }
+  ],
+  "response": {
+    "format": "json-stat2"
+  }
+}
