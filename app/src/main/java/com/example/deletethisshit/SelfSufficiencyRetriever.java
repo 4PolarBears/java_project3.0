@@ -18,6 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//This class retrieves data about workplace self-sufficiency through an API
 public class SelfSufficiencyRetriever {
 
     static ObjectMapper objectMapper = new ObjectMapper();

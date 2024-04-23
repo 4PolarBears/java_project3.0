@@ -2,6 +2,7 @@ package com.example.deletethisshit;
 
 import java.util.ArrayList;
 
+//This class contains lists with data retrieved from SelfSufficiencyRetriever
 public class SelfSufficiencyData {
 
     private ArrayList years;

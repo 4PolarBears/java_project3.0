@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class WorkStatistics {
 
+    //This class contains lists with data retrieved from WorkStatisticsRetriever
+
     private ArrayList years;
     private ArrayList headers;
     private int[][] stastisticsArrays;

@@ -1,5 +1,6 @@
 package com.example.deletethisshit;
 
+//This class contains a WeatherData constructor with data retrieved from WeatherDataRetriever
 public class WeatherData {
     private String name;
     private String main;
