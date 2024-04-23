@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private ListView lv_listView, lv_listView2;
     private TextView tv_emptyTextView;
     private FragmentManager fragmentManager;
-
     ArrayList<String> lastCitieslist = new ArrayList<>();
 
     //Shows the search layout and on click item saves users choice and updates list of last searches

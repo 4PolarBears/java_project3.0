@@ -2,7 +2,6 @@ package com.example.deletethisshit;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,7 +57,8 @@ public class CityInfo extends AppCompatActivity {
         });
     }
 
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
