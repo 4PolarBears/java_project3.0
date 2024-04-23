@@ -50,8 +50,8 @@ public class CityInfoFragment extends Fragment {
                                     public void run() {
                                         String weatherDataAsString = weatherData.getName() + "\n" +
                                                 "Weather now: " + weatherData.getMain() + "(" + weatherData.getDescription() + ")\n" +
-                                                "Temperature: " + weatherData.getTemperature() + "\n" +
-                                                "Wind speed: " + weatherData.getWindSpeed() + "\n";
+                                                "Temperature: " + convertTemperature(weatherData.getTemperature()) + " °C" + "\n" +
+                                                "Wind speed: " + weatherData.getWindSpeed() + " m/s" + "\n";
                                         textViewTitle.setText(weatherDataAsString);
 
                                         int f = sufficiencyData.getHeadersCount();
@@ -86,6 +86,15 @@ public class CityInfoFragment extends Fragment {
         );
 
         return view;
+    }
+
+
+    private String convertTemperature (String temperature) {
+        double numTemp = Double.parseDouble(temperature);
+        double numResult = numTemp - 273.15;
+
+        String result = Double.toString(Math.round(numResult));
+        return result;
     }
 }
 
