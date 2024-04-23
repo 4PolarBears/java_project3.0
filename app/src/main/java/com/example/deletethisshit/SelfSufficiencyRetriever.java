@@ -1,7 +1,6 @@
 package com.example.deletethisshit;
 
 import android.content.Context;
-import android.widget.EditText;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -19,7 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MunicipalityDataRetriever {
+public class SelfSufficiencyRetriever {
 
     static ObjectMapper objectMapper = new ObjectMapper();
 
@@ -33,13 +32,13 @@ public class MunicipalityDataRetriever {
     }
 
 
-    public MunicipalityData getData(Context context, String municipalityName) {
+    public SelfSufficiencyData getSelfSufficiencyData(Context context, String municipalityName) {
 
         String code = municipalityNamesToCodesMap.get(municipalityName);
 
 
         try {
-            JsonNode jsonQuery = objectMapper.readTree(context.getResources().openRawResource(R.raw.query));
+            JsonNode jsonQuery = objectMapper.readTree(context.getResources().openRawResource(R.raw.query2));
             ((ObjectNode) jsonQuery.findValue("query").get(0).get("selection")).putArray("values").add(code);
 
             HttpURLConnection con = connectToAPIAndSendPostRequest(objectMapper, jsonQuery);
@@ -88,7 +87,7 @@ public class MunicipalityDataRetriever {
                     }
                 }
 
-                MunicipalityData allData = new MunicipalityData(years, headers, statisticsArrays);
+                SelfSufficiencyData allData = new SelfSufficiencyData(years, headers, statisticsArrays);
                 return allData;
             }
         } catch (IOException e) {
@@ -101,7 +100,7 @@ public class MunicipalityDataRetriever {
 
     private static HttpURLConnection connectToAPIAndSendPostRequest(ObjectMapper objectMapper, JsonNode jsonQuery)
             throws MalformedURLException, IOException, ProtocolException, JsonProcessingException {
-        URL url = new URL("https://pxdata.stat.fi:443/PxWeb/api/v1/en/StatFin/synt/statfin_synt_pxt_12dy.px");
+        URL url = new URL("https://pxdata.stat.fi:443/PxWeb/api/v1/en/StatFin/tyokay/statfin_tyokay_pxt_125s.px");
 
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
@@ -143,7 +142,7 @@ public class MunicipalityDataRetriever {
     private static JsonNode readAreaDataFromTheAPIURL(ObjectMapper objectMapper) {
         JsonNode areas = null;
         try {
-            areas = objectMapper.readTree(new URL("https://pxdata.stat.fi:443/PxWeb/api/v1/en/StatFin/synt/statfin_synt_pxt_12dy.px"));
+            areas = objectMapper.readTree(new URL("https://pxdata.stat.fi:443/PxWeb/api/v1/en/StatFin/tyokay/statfin_tyokay_pxt_125s.px"));
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -152,7 +151,4 @@ public class MunicipalityDataRetriever {
         }
         return areas;
     }
-
-
 }
-

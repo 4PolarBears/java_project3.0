@@ -59,7 +59,7 @@ public class CityInfo extends AppCompatActivity {
         });
     }
 
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
