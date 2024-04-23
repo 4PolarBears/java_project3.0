@@ -18,7 +18,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class CityInfo extends AppCompatActivity {
-    private String city;
+    private String city, ad;
     private TextView txtPopulation;
     private TextView txtWeather;
 
