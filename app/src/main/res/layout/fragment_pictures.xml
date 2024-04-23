@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:scrollbars="vertical"
+    android:verticalScrollbarPosition="defaultPosition">
 
     <LinearLayout
         android:id="@+id/InfoWrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="15dp"
-        android:paddingTop="45dp"
         android:orientation="vertical"
+        android:paddingLeft="75dp"
+        android:paddingTop="45dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +25,6 @@
             android:id="@+id/picturesName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Some Pictures Name"
             android:textColor="@color/black"
             android:textSize="25dp"
             android:paddingLeft="75dp"
@@ -34,15 +36,12 @@
             android:id="@+id/picturesText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="bla bla bla"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cityName" />
     </LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

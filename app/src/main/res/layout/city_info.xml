@@ -42,18 +42,6 @@
             android:text="Pictures" />
     </com.google.android.material.tabs.TabLayout>
 
-    <ImageButton
-        android:id="@+id/button2"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_below="@+id/tabLayout"
-        android:background="@drawable/ic_back2"
-        android:onClick="return_click"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tabLayout"
-        android:layout_margin="15dp"/>
-
     <!-- Bottom Fragment -->
     <FrameLayout
         android:id="@+id/frameBottom"
