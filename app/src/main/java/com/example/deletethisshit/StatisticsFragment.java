@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+//Statistics fragment which presents statistical information about chosen municipality/city
 public class StatisticsFragment extends Fragment {
     private String cityChoice;
     private TextView textViewTitle;
@@ -24,9 +25,7 @@ public class StatisticsFragment extends Fragment {
         this.cityChoice = cityChoice;
     }
 
-    //String trash = "something";
-    //private TextView textViewDescription;
-
+    //Retrieves statistical information about the city from external source and presents it for a user
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_statistics, container, false);
 

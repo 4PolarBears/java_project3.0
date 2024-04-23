@@ -1,40 +1,30 @@
 package com.example.deletethisshit;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.deletethisshit.databinding.ActivityMainBinding;
-
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+
+// MainActivity implements search and list last searches functionality
 
 public class MainActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter, adapter2;
     private String choice;
     private ListView lv_listView, lv_listView2;
     private TextView tv_emptyTextView;
-    private ActivityMainBinding binding;
     private FragmentManager fragmentManager;
-    private TextView txtPopulation;
-    private TextView txtWeather;
-  
     ArrayList<String> lastCitieslist = new ArrayList<>();
 
+    //Shows the search layout and on click item saves users choice and updates list of last searches
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         lv_listView.setEmptyView(tv_emptyTextView);
     }
 
+    // Updates list of last searches and shows it through adapter for the user
     protected void onResume() {
         super.onResume();
 
@@ -98,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+    // Search method which updates search results while user types it
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.header_nav_menu, menu);
 

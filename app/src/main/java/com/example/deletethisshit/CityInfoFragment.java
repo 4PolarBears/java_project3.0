@@ -12,9 +12,8 @@ import androidx.fragment.app.Fragment;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+//CityInfo fragment which presents general information about chosen municipality/city
 public class CityInfoFragment extends Fragment {
-    private static final String ARG_ITEM = "item";
-    private int population;
     private String cityChoice;
     private TextView textViewTitle;
     private TextView textViewDescription;
@@ -24,6 +23,8 @@ public class CityInfoFragment extends Fragment {
         this.cityChoice = cityChoice;
     }
 
+
+    //Retrieves information about the city from external source and presents it for a user
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_information, container, false);
 
