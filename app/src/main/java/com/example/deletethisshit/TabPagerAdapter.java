@@ -21,8 +21,8 @@ public class TabPagerAdapter extends FragmentStateAdapter {
                 return new CityInfoFragment(cityChoice);
             case 1:
                 return new StatisticsFragment(cityChoice);
-            case 2:
-                return new PicsFragment(cityChoice);
+//            case 2:
+//                return new PicsFragment(cityChoice);
             default:
                 throw new IllegalArgumentException("Invalid position: " + position);
         }
@@ -30,6 +30,6 @@ public class TabPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3; // Number of tabs
+        return 2; // Number of tabs
     }
 }
