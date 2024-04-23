@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private TextView txtPopulation;
     private TextView txtWeather;
-
+  
     ArrayList<String> lastCitieslist = new ArrayList<>();
 
     @Override
