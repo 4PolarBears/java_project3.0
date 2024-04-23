@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
+//This class retrieves weather data through an API
 public class WeatherDataRetriever {
 
     private final String API_KEY =  "1954f4d5bc47bf4d41d27bfdef332473";

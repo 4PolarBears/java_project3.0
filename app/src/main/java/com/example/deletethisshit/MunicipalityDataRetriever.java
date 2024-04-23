@@ -18,6 +18,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//This class retrieves data about population through an API
+
 public class MunicipalityDataRetriever {
 
     static ObjectMapper objectMapper = new ObjectMapper();

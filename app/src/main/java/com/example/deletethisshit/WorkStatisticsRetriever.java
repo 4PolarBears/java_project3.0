@@ -18,6 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//This class retrieves data about employment through an API
 public class WorkStatisticsRetriever {
 
     static ObjectMapper objectMapper = new ObjectMapper();
