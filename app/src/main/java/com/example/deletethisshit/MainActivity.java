@@ -16,6 +16,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.deletethisshit.databinding.ActivityMainBinding;
 
@@ -25,7 +27,7 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter, adapter2;
-    private String choice;
+    private String choice, city;
     private ListView lv_listView, lv_listView2;
     private TextView tv_emptyTextView;
     private ActivityMainBinding binding;
@@ -33,12 +35,14 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtPopulation;
     private TextView txtWeather;
 
+    private RecyclerView lastFiveCities;
     ArrayList<String> lastCitieslist = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         lv_listView = findViewById(R.id.lv_listView);
         tv_emptyTextView = findViewById(R.id.tv_emptyTextView);
@@ -66,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     lastCitieslist.add(choice);
                 }
+
             }
         });
 
@@ -120,7 +125,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
 
     }
-
-
 
 }

@@ -10,7 +10,7 @@ for)
 - General description of the work
 
 
-# Cities Of Finland
+# Cities and Municipalities Of Finland
 made by Alina Lemetti and Marija Krotova
 
 
@@ -19,6 +19,10 @@ made by Alina Lemetti and Marija Krotova
 ### Division of labor
 
 ### Describtion
+
+In our app you can search for municipalities of Finland and see basic information, statistical data and more about city in this municipality. 
+...
+...
 
 ### Implemented Features 
 Requirement | Description | Points
