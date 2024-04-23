@@ -22,10 +22,8 @@
             android:id="@+id/picturesName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Some Pictures Name"
             android:textColor="@color/black"
             android:textSize="25dp"
-            android:paddingLeft="75dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
@@ -34,7 +32,6 @@
             android:id="@+id/picturesText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="bla bla bla"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

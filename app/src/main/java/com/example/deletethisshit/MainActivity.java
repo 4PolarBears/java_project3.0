@@ -19,19 +19,21 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.deletethisshit.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
-    private ArrayAdapter<String> adapter;
+    private ArrayAdapter<String> adapter, adapter2;
     private String choice;
-    private ListView lv_listView;
+    private ListView lv_listView, lv_listView2;
     private TextView tv_emptyTextView;
     private ActivityMainBinding binding;
     private FragmentManager fragmentManager;
     private TextView txtPopulation;
     private TextView txtWeather;
 
+    ArrayList<String> lastCitieslist = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentManager = getSupportFragmentManager();
 
-
-        //String choice = "";
+        lv_listView2 = findViewById(R.id.lv_listView2);
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.cities_array));
         lv_listView.setAdapter(adapter);
@@ -54,15 +55,47 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id) {
                 choice = parent.getItemAtPosition(position).toString();
 
+
                 Intent intent = new Intent(MainActivity.this, CityInfo.class);
                 intent.putExtra("city", choice);
                 startActivity(intent);
 
-                Toast.makeText(getApplicationContext(), choice, Toast.LENGTH_SHORT).show();
+                if (lastCitieslist.size() == 5) {
+                    lastCitieslist.remove(0);
+                    lastCitieslist.add(choice);
+                } else {
+                    lastCitieslist.add(choice);
+                }
             }
         });
 
         lv_listView.setEmptyView(tv_emptyTextView);
+    }
+
+    protected void onResume() {
+        super.onResume();
+
+        adapter2 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, lastCitieslist);
+        lv_listView2.setAdapter(adapter2);
+
+        lv_listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id) {
+                choice = parent.getItemAtPosition(position).toString();
+
+
+                Intent intent = new Intent(MainActivity.this, CityInfo.class);
+                intent.putExtra("city", choice);
+                startActivity(intent);
+
+                if (lastCitieslist.size() == 5) {
+                    lastCitieslist.remove(0);
+                    lastCitieslist.add(choice);
+                } else {
+                    lastCitieslist.add(choice);
+                }
+            }
+        });
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
