@@ -1,13 +1,19 @@
 package com.example.deletethisshit;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class CityInfo extends AppCompatActivity {
     private String city;
 
@@ -15,6 +21,7 @@ public class CityInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.city_info);
         city = getIntent().getStringExtra("city");
+
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager = findViewById(R.id.viewArea);
