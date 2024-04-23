@@ -8,9 +8,9 @@ made by Alina Lemetti and Marija Krotova
 
 
 ### Division of labor
-Alina Lemetti: connecting external sources, displaying information, quiz functionality...
+Alina Lemetti: connecting external sources, displaying information, documentaion.
 
-Marija Krotova: xml views, search functionality, fragment views, documentation...
+Marija Krotova: xml views, search functionality, fragment views, documentation.
 
 ### Description
 
