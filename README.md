@@ -4,8 +4,7 @@ made by Alina Lemetti and Marija Krotova
 
 ### Class diagram
 
-![image](https://github.com/4PolarBears/java_project3.0/assets/52287963/4b0ca2ee-357d-42da-9998-86bbda0fbf41)
-
+![image](https://github.com/4PolarBears/java_project3.0/assets/52287963/905566ae-6ae1-4e1f-a1a5-0fd004548181)
 
 ### Division of labor
 Alina Lemetti: connecting external sources, displaying information, documentaion.
