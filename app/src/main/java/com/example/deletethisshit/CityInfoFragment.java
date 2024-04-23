@@ -1,30 +1,14 @@
 package com.example.deletethisshit;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -45,20 +29,21 @@ public class CityInfoFragment extends Fragment {
 
         textViewDescription = (TextView) view.findViewById(R.id.cityInfo);
         textViewTitle = (TextView) view.findViewById(R.id.cityName);
-//        vziat source zdes i tak otdelnij v kazdom tabe atdelno
 
         Context context = getContext();
-        MunicipalityDataRetriever municipalityDataRetriever = new MunicipalityDataRetriever();
         WeatherDataRetriever weatherDataRetriever = new WeatherDataRetriever();
+        SelfSufficiencyRetriever selfSufficiencyRetriever = new SelfSufficiencyRetriever();
+        WorkStatisticsRetriever workStatisticsRetriever = new WorkStatisticsRetriever();
 
         ExecutorService service = Executors.newSingleThreadExecutor();
         service.execute(new Runnable() {
                             @Override
                             public void run() {
-                                MunicipalityDataRetriever.getMunicipalityCodesMap();
-                                MunicipalityData allData = municipalityDataRetriever.getData(context, cityChoice);
-
+                                SelfSufficiencyRetriever.getMunicipalityCodesMap();
+                                SelfSufficiencyData sufficiencyData = selfSufficiencyRetriever.getSelfSufficiencyData(context, cityChoice);
                                 WeatherData weatherData = weatherDataRetriever.getData(cityChoice);
+                                WorkStatisticsRetriever.getMunicipalityCodesMap();
+                                WorkStatistics workStatistics = workStatisticsRetriever.getWorkStatisticsData(context, cityChoice);
 
                                 getActivity().runOnUiThread(new Runnable() {
                                     @Override
@@ -69,25 +54,32 @@ public class CityInfoFragment extends Fragment {
                                                 "Wind speed: " + weatherData.getWindSpeed() + "\n";
                                         textViewTitle.setText(weatherDataAsString);
 
-                                        int f = allData.getHeadersCount();
-                                        int h = allData.getYearsCount();
-
-                                        String dataString = "";
-                                        dataString = "Year" + "\t";
+                                        int f = sufficiencyData.getHeadersCount();
+                                        int d = workStatistics.getHeadersCount();
+                                        String dataString2 = "";
+                                        dataString2 = "Year" + "\t" + "\t";
                                         for (int a = 0; a < f; a++) {
-                                            dataString = dataString + allData.getHeaders(a) + "\t";
+                                            dataString2 = dataString2 + sufficiencyData.getHeaders(a) + "\t";
                                         }
-                                        dataString = dataString + "\n";
+                                        for (int b = 0; b < d; b++) {
+                                            dataString2 = dataString2 + workStatistics.getHeaders(b) + "\t";
+                                        }
+                                        dataString2 = dataString2 + "\n";
 
-                                        for (int a = 0; a < h; a++) {
-                                            dataString = dataString + allData.getYear(a) + "\t";
+                                        int w = workStatistics.getYearsCount();
+                                        int h = sufficiencyData.getYearsCount();
+                                        for (int q = 0; q < h; q++) {
+                                            dataString2 = dataString2 + sufficiencyData.getYear(q) + "\t" + "\t"+ "\t";
                                             for (int c = 0; c < f; c++) {
-                                                dataString = dataString + allData.getItem(a, c) + "\t";
+                                                dataString2 = dataString2 + sufficiencyData.getItem(q, c) + "\t" + "\t"+ "\t";
+                                                for (int e = 0; e < d; e++) {
+                                                    dataString2 = dataString2 + workStatistics.getItem(q, e) + "\t" + "\t"+ "\t"    ;
+                                                }
                                             }
-                                            dataString = dataString + "\n";
+                                            dataString2 = dataString2 + "\n";
                                         }
 
-                                        textViewDescription.setText(dataString);
+                                        textViewDescription.setText(dataString2);
                                     }
                                 });                            }
                         }

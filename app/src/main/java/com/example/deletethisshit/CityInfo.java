@@ -76,7 +76,4 @@ public class CityInfo extends AppCompatActivity {
         });
     }
 
-/*    public void onSearchButtonClick(View view) {
-
-    }*/
 }
