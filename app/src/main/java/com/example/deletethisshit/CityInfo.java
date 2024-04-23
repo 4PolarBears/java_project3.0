@@ -1,14 +1,7 @@
 package com.example.deletethisshit;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -17,9 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
+// CityInfo manages tab-layout and combines fragments together
 public class CityInfo extends AppCompatActivity {
     private String city;
 
@@ -44,18 +35,14 @@ public class CityInfo extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-//                getSupportFragmentManager().beginTransaction().replace(R.id.frameBottom, cityInfoFragment).commit();
-//                bottomFragment.updateImportantText(); // Update the bottom fragment information
             }
 
             //            @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-//                bottomFragment.updateImportantText();
             }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-//                bottomFragment.updateImportantText();
             }
         });
 

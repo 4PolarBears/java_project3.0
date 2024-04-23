@@ -1,7 +1,6 @@
 package com.example.deletethisshit;
 
 import android.content.Context;
-import android.widget.EditText;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
