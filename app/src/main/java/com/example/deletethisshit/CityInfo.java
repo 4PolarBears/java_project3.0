@@ -2,7 +2,6 @@ package com.example.deletethisshit;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.ActionBar;
@@ -10,7 +9,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 public class CityInfo extends AppCompatActivity {
-    private String city, ad;
+    private String city;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +57,7 @@ public class CityInfo extends AppCompatActivity {
             }
         });
     }
+
 
   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {

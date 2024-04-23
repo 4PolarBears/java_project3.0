@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/frameBottom"/>
-<!--        android:background="@color/white"/>-->
+    <!--        android:background="@color/white"/>-->
 
     <!-- TabLayout -->
     <com.google.android.material.tabs.TabLayout
@@ -20,7 +20,7 @@
         android:layout_alignParentTop="true"
         app:tabGravity="fill"
         app:tabMode="fixed">
-<!--        android:background="@color/white">-->
+        <!--        android:background="@color/white">-->
 
         <!-- TabItems -->
         <com.google.android.material.tabs.TabItem
