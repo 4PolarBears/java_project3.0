@@ -10,7 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 public class CityInfo extends AppCompatActivity {
-    private String city;
+    private String city, ad;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
