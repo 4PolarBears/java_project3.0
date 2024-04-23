@@ -30,6 +30,5 @@ There is more than one data source | In addition to Statistics Finland, the prog
 There are more than two data sources | In addition to Statistics Finland, and second data source, the program will fetch data from a third API and it’s displayed to the user | 2 
 There are more than three data sources | In addition to Statistics Finland, second, and third data source, the program will fetch data from a fourth API and it’s displayed to the user | 1
 Statistics | Program internal statistics about which municipalities the user searched, and the user can quickly see and select from e.g. the last five municipalities they have searched. | 2
-Quiz | The app will generate ten questions about the data in municipality/city with true/false options. The user can answer questions (all questions can be listed in one view, or one by one in their own view). In the end user is shown the final score and how well they did in the quiz. | 4
 Fragments | You have used Fragment (reusable UI components) in your work. More information: [https://developer.android.com/guide/fragments](https://developer.android.com/guide/fragments). | 4
-Total: | | 26
+Total: | | 22
