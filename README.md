@@ -1,5 +1,5 @@
 # Cities and Municipalities Of Finland
-made by Alina Lemetti and Marija Krotova
+project made by Alina Lemetti and Marija Krotova
 
 
 ### Class diagram
